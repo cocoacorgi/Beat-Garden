@@ -48,6 +48,7 @@ function setNumSteps(numSteps) {
     this.numSteps = numSteps;
     stepCenterCoordinates = Array.from(Array(numSteps), () => new Array(2));
     stepStatuses = Array(numSteps).fill(false);
+    outlet(0, stepStatuses);
     mgraphics.redraw();
 }
 
