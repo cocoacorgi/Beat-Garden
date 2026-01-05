@@ -2,7 +2,7 @@ mgraphics.init();
 mgraphics.autofill = 0;
 mgraphics.relative_coords = 0;
 
-let numSteps = 16;
+var numSteps = 16;
 let stepGap = 8;
 
 function paint() {    
@@ -36,4 +36,9 @@ function paint() {
         mgraphics.fill();
         currentStepCenterAngle -= angleBetweenStepCenters;
     }
+}
+
+function setNumSteps(numSteps) {
+    this.numSteps = numSteps;
+    mgraphics.redraw();
 }
