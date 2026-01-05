@@ -30,9 +30,9 @@ function paint() {
     // Draw the sequence/steps. Sequence steps follow in a clockwise order with the first step located at the "12 O'Clock" position.
     var currentStepCenterAngle = Math.PI / 2;
     for (var i = 0; i < numSteps; i++) {
-        let stepCenterX = (xOffset + sequenceCenterX - stepRadius) + (sequenceRadius * Math.cos(currentStepCenterAngle));
-        let stepCenterY = (yOffset + sequenceCenterY - stepRadius) + (sequenceRadius * Math.sin(currentStepCenterAngle));
-        mgraphics.ellipse(stepCenterX, stepCenterY, 2*stepRadius, 2*stepRadius);
+        let stepCenterX = (xOffset + sequenceCenterX) + (sequenceRadius * Math.cos(currentStepCenterAngle));
+        let stepCenterY = (yOffset + sequenceCenterY) - (sequenceRadius * Math.sin(currentStepCenterAngle));
+        mgraphics.ellipse(stepCenterX - stepRadius, stepCenterY - stepRadius, 2*stepRadius, 2*stepRadius);
         mgraphics.fill();
         currentStepCenterAngle -= angleBetweenStepCenters;
     }
